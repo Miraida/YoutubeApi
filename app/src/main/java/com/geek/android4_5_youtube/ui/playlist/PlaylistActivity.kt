@@ -18,7 +18,7 @@ class PlaylistActivity : BaseActivity<ActivityPlaylistBinding>() {
 
     override fun showDisconnectState(isAvailable: Boolean) {
         if (!isAvailable) {
-            startActivity(Intent(this, NetworkActivity::class.java))
+            startActivity(getIntentWithTag())
         }
     }
 
@@ -41,11 +41,19 @@ class PlaylistActivity : BaseActivity<ActivityPlaylistBinding>() {
     override fun setupLiveData() {
         viewModel?.fetchPlaylist()?.observe(this, {
             ui.progressbar.gone()
-            adapter.updateList(it?.items as ArrayList<Item>)
+            if (it != null) {
+                adapter.updateList(it.items as ArrayList<Item>)
+            }
         })
     }
 
     override fun bindView(): ActivityPlaylistBinding {
         return ActivityPlaylistBinding.inflate(layoutInflater)
+    }
+
+    private fun getIntentWithTag(): Intent {
+        val intent = Intent(this, NetworkActivity::class.java)
+        intent.putExtra(Constant.TAG, localClassName)
+        return intent
     }
 }

@@ -21,8 +21,14 @@ class DetailPlaylistActivity : BaseActivity<ActivityDetailPlaylistBinding>() {
 
     override fun showDisconnectState(isAvailable: Boolean) {
         if (!isAvailable) {
-            startActivity(Intent(this, NetworkActivity::class.java))
+            startActivity(getIntentWithTag())
         }
+    }
+
+    private fun getIntentWithTag(): Intent {
+        val intent = Intent(this, NetworkActivity::class.java)
+        intent.putExtra(Constant.TAG, localClassName)
+        return intent
     }
 
     override fun setupUI() {

@@ -7,4 +7,5 @@ object Constant {
     const val PART = "snippet,contentDetails"
     //https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyBhuLrWzqEom9tIbxkwuXj8DJI7tHwBbS0&part=snippet%2CcontentDetails&channelId=UCApdP81v1rMFGiFUq-A7vBQ
     const val KEY = "KEY"
+    const val TAG = "KEY"
 }
