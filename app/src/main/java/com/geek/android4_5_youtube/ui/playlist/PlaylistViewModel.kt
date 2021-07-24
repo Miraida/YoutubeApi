@@ -1,4 +1,4 @@
-package com.geek.android4_5_youtube.ui.main
+package com.geek.android4_5_youtube.ui.playlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel : ViewModel() {
+class PlaylistViewModel : ViewModel() {
 
     fun fetchPlaylist(): LiveData<Playlist?> {
         return fetchYoutubeApiPlaylist()

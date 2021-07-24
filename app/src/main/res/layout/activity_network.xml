@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.disconnect.NetworkActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/light_gray" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/no_internet"
+        android:src="@drawable/ic_non_internet" />
+
+    <Button
+        android:id="@+id/btn_try_again"
+        style="@style/btn_style"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="32dp"
+        android:text="@string/try_again" />
+</FrameLayout>

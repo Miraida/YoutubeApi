@@ -10,6 +10,6 @@ interface ApiService {
     fun fetchAllPlaylist(
         @Query("key") apiKey: String,
         @Query("part") part: String,
-        @Query("channelId") channelId: String) : Call<Playlist>
-
+        @Query("channelId") channelId: String
+    ): Call<Playlist>
 }

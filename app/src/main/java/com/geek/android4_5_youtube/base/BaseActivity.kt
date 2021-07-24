@@ -2,20 +2,46 @@ package com.geek.android4_5_youtube.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
+import com.geek.android4_5_youtube.utils.NetworkMonitorUtil
 
-abstract class BaseActivity(private val layout: Int) : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
+
+    private val networkMonitor = NetworkMonitorUtil(this)
+    protected lateinit var ui: VB
+    protected abstract fun bindView(): VB
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout)
+        ui = bindView()
+        setContentView(ui.root)
 
-        showDisconnectState()
+        checkNetwork()
         setupUI()
         setupLiveData()
     }
 
-    abstract fun showDisconnectState() // check internet connection
+    private fun checkNetwork() {
+        networkMonitor.result = { isAvailable ->
+            runOnUiThread {
+                showDisconnectState(isAvailable)
+            }
+        }
+    }
+
+    abstract fun showDisconnectState(isAvailable: Boolean) // check internet connection
 
     abstract fun setupUI() // init views
 
     abstract fun setupLiveData() // init live data
+
+    override fun onResume() {
+        super.onResume()
+        networkMonitor.register()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        networkMonitor.unregister()
+    }
 }

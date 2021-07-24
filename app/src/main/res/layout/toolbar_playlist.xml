@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize">
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/back"
+        android:src="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/back_tv"
+        style="@style/toolbar_tv_style"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="33dp"
+        android:fontFamily="@font/sf_ui_display_regular"
+        android:text="@string/back"
+        android:textSize="17sp" />
+
+    <TextView
+        style="@style/toolbar_tv_style"
+        android:layout_gravity="center"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/playlist"
+        android:textSize="20sp" />
+
+</FrameLayout>
