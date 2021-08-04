@@ -4,4 +4,7 @@
     <string name="no_internet">No Internet</string>
     <string name="playlist">Playlist</string>
     <string name="back">Back</string>
+    <string name="play">play</string>
+    <string name="video">video</string>
+    <string name="video_series"> video series</string>
 </resources>

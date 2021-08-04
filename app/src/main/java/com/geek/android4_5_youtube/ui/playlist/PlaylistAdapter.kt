@@ -10,7 +10,7 @@ import com.geek.android4_5_youtube.model.Item
 import com.geek.android4_5_youtube.utils.loadImage
 
 class PlaylistAdapter(
-    private val listener: OnItemClickListener
+    private val listener: (id: String, title:String)-> Unit
 ) :
     RecyclerView.Adapter<PlaylistAdapter.ViewHolder>() {
 
@@ -31,7 +31,7 @@ class PlaylistAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position])
         holder.itemView.setOnClickListener {
-            list[position].id?.let { id -> listener.onItemClick(id) }
+            list[position].let { data -> listener(data.id.toString(), data.snippet?.title.toString()) }
         }
     }
 
@@ -43,12 +43,12 @@ class PlaylistAdapter(
 
         fun onBind(item: Item) {
             ui.itemTvTitle.text = item.snippet?.title
-            ui.itemTvSub.text = item.snippet?.description
+            ui.itemTvSub.text = item.contentDetails?.itemCount.toString().plus(" ").plus(itemView.context.getString(R.string.video_series))
             item.snippet?.thumbnails?.medium?.url?.let { ui.itemIv.loadImage(it) }
         }
     }
 
     interface OnItemClickListener {
-        fun onItemClick(id: String)
+        fun onItemClick(id: String,title:String)
     }
 }

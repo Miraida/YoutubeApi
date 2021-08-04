@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize">
-
-    <ImageView
-        android:layout_width="12dp"
-        android:layout_height="20dp"
-        android:layout_gravity="center|start"
-        android:layout_marginStart="16dp"
-        android:contentDescription="@string/back"
-        android:src="@drawable/arrow" />
 
     <TextView
         android:id="@+id/back_tv"
@@ -18,7 +11,8 @@
         android:layout_marginStart="33dp"
         android:fontFamily="@font/sf_ui_display_regular"
         android:text="@string/back"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        app:drawableLeftCompat="@drawable/ic_arrow" />
 
     <TextView
         style="@style/toolbar_tv_style"

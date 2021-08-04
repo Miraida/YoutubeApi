@@ -1,8 +1,9 @@
-package com.geek.android4_5_youtube.base
+package com.geek.android4_5_youtube.core.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.geek.android4_5_youtube.model.PlaylistDetail
 import com.geek.android4_5_youtube.utils.NetworkMonitorUtil
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {

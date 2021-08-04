@@ -12,4 +12,6 @@
     <color name="black_80">#CC000000</color>
     <color name="title_color">#333333</color>
     <color name="sub_title_color">#151515</color>
+    <color name="extra_light_gray">#F6F6F6</color>
+    <color name="light_black">#1A1A1A</color>
 </resources>

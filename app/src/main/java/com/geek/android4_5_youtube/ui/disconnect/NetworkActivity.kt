@@ -2,8 +2,8 @@ package com.geek.android4_5_youtube.ui.disconnect
 
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
-import com.geek.android4_5_youtube.`object`.Constant
-import com.geek.android4_5_youtube.base.BaseActivity
+import com.geek.android4_5_youtube.utils.Constant
+import com.geek.android4_5_youtube.core.ui.BaseActivity
 import com.geek.android4_5_youtube.databinding.ActivityNetworkBinding
 
 class NetworkActivity : BaseActivity<ActivityNetworkBinding>() {

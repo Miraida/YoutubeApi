@@ -5,7 +5,8 @@ data class Playlist(
     val kind: String? = null,
     val nextPageToken: String? = null,
     val prevPageToken: String? = null,
-    val items: List<Item>? = null
+    val items: List<Item>? = null,
+    val message: String? = null
 )
 
 data class ContentDetails(
@@ -19,9 +20,9 @@ data class Default(
 )
 
 data class High(
-    val height: Int?,
-    val url: String?,
-    val width: Int?
+    val height: Int? = null,
+    val url: String? = null,
+    val width: Int? = null
 )
 
 data class Item(

@@ -1,4 +1,4 @@
-package com.geek.android4_5_youtube.base
+package com.geek.android4_5_youtube.core.ui
 
 import androidx.lifecycle.ViewModel
 
